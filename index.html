@@ -1,0 +1,173 @@
+<!--
+    Si ho usato Gemini per il CSS, ora shut up
+-->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELIS Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Overlay Iframe -->
+    <div id="iframe-view" class="iframe-container hidden">
+        <button id="close-iframe-btn" class="back-btn" title="Torna alla Dashboard">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Torna alla Dashboard</span>
+        </button>
+        <iframe id="app-iframe" src="" frameborder="0"></iframe>
+    </div>
+
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="brand">
+                <h1>Dashboard Ingegneria Digitale</h1>
+            </div>
+            <p class="subtitle">Accesso rapido ai portali e ai servizi ELIS e PoliMI</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Sezione Servizi ELIS -->
+            <section class="category-section">
+                <h2 class="category-title">
+                    <i class="fa-solid fa-building-columns"></i> ELIS
+                </h2>
+                <div class="grid">
+                    <a target="_blank" href="https://stud.elis.org/" class="card elis-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Studenti ELIS</h3>
+                            <p>Portale didattico e risorse</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>
+
+                    <a target="_blank" href="https://my.elis.org/" class="card elis-card no-iframe">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>MyELIS</h3>
+                            <p>Corsi ELIS</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>
+
+                    <a target="_blank" href="http://spaces.elis.org/" class="card elis-card no-iframe">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-door-open"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Prenotazione spazi</h3>
+                            <p>Postazioni per lo studio</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Sezione PoliMI -->
+            <section class="category-section">
+                <h2 class="category-title">
+                    <i class="fa-solid fa-book"></i> PoliMI
+                </h2>
+                <div class="grid">
+                    <a target="_blank" href="https://www.polimi.it/servizi-online" class="card poli-card no-iframe">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Servizi Online</h3>
+                            <p>Servizi del PoliMI</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>
+
+                    <a target="_blank" href="https://webeep.polimi.it/my/" class="card poli-card no-iframe">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>WeBeep</h3>
+                            <p>Videolezioni e dispense</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Sezione College -->
+            <section class="category-section">
+                <h2 class="category-title">
+                    <i class="fa-solid fa-house-user"></i> ELIS College
+                </h2>
+                <div class="grid">
+                    <a target="_blank" href="https://pasti.eliscollege.org/" class="card college-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Mensa</h3>
+                            <p>Menù e prenotazione pasti</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>
+
+                    <a target="_blank" href="https://sport.eliscollege.org/" class="card college-card no-iframe">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-volleyball"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Prenotazione Sport</h3>
+                            <p>Partite serali</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>
+                    
+                    <a target="_blank" href="https://biblioteca.elis.org/" class="card college-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Biblioteca</h3>
+                            <p>Catalogo e prestito libri</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>
+                </div>
+            </section>
+
+            <button id="toggle-iframe-btn" class="toggle-btn mode-off">
+                <i class="fa-solid fa-code"></i>
+                <span id="toggle-text">Iframe: Disattivato</span>
+            </button>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Realizzato da Francesco Fortunato - 2026</p>
+            <div class="footer-links">
+                <a href="https://instagram.com/frankfortu_" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <a href="https://wa.me/393391033868" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="mailto:francesco.fortunato@edu.elis.org" class="footer-link">
+                    <i class="fa-solid fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
