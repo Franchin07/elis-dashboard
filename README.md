@@ -13,3 +13,6 @@ Dashboard per Ingegneria Digitale
 
 ## Funzione Iframe
 Con la funzione Iframe disattivata tutti i link verranno aperti in una pagina nuova, con Iframe attivato i link supportati verranno aperti direttamente nella dashboard con un pulsante per tornare indietro.
+
+## Modalità Residente
+Con la modalità Residente attivata verranno mostrati altri pulsanti, utili per chi sta in residenza maschile.
