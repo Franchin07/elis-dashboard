@@ -285,6 +285,29 @@ body {
         justify-content: center;
         padding: 0.75rem 1rem;
     }
+
+    .calendar-sidebar {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    /* Forza l'iframe a essere scrollabile orizzontalmente in modo fluido su mobile */
+    .sidebar-content iframe {
+        width: 100% !important;
+        min-width: 700px; /* Impedisce al layout di schiacciarsi troppo, permettendo lo zoom orizzontale */
+    }
+    
+    .sidebar-content {
+        overflow-x: auto; /* Abilita lo scroll orizzontale nativo per non tagliare i giorni */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .split-btn {
+        width: 100%;
+    }
+    .split-main {
+        justify-content: center;
+    }
 }
 
 /* Contenitore dei pulsanti: si adatta automaticamente a qualsiasi schermo */
@@ -421,4 +444,144 @@ body.mode-mixed .card:not(.no-iframe):hover .external-icon::before {
 .footer-link:hover {
     color: var(--text-primary);
     transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SIDEBAR CALENDARIO LATERALE
+   ========================================================================== */
+.calendar-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Nascosto fuori dallo schermo a destra */
+    width: 100%;
+    max-width: 1100px; /* Larghezza del pannello laterale su desktop */
+    height: 100vh;
+    background-color: var(--card-bg, #1e293b);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.calendar-sidebar.open {
+    right: 0; /* Scivola dentro lo schermo */
+}
+
+/* Pulsante di chiusura all'interno della sidebar */
+.close-sidebar-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10001;
+    background-color: var(--card-hover, #334155);
+    color: var(--text-primary, #f8fafc);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.close-sidebar-btn:hover {
+    background-color: #ef4444; /* Rosso di chiusura */
+    border-color: transparent;
+    transform: scale(1.05);
+}
+
+/* Contenuto e iframe */
+.sidebar-content {
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #ffffff; /* Sfondo bianco per il widget di Outlook */
+}
+
+/* ==========================================================================
+   OVERLAY DI OSCURAMENTO (BACKDROP BOOTSTRAP STYLE)
+   ========================================================================== */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscuramento trasparente */
+    backdrop-filter: blur(2px); /* Effetto sfocato leggero opzionale */
+    z-index: 9999; /* Posizionato subito sotto la sidebar (che ha z-index 10000) */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ==========================================================================
+   SPLIT BUTTON (CALENDARIO + DOWNLOAD)
+   ========================================================================== */
+.split-btn {
+    display: inline-flex;
+    align-items: stretch;
+    background-color: var(--card-bg, #1e293b);
+    color: var(--text-primary, #f8fafc);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.split-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    background-color: var(--card-hover, #334155);
+}
+
+.split-main {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    padding: 0.6rem 1rem 0.6rem 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.split-download {
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    color: inherit;
+    padding: 0.6rem 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.split-download:hover {
+    background-color: rgba(255, 255, 255, 0.12);
 }

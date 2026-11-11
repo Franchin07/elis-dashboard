@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementById('close-iframe-btn');
     const cards = document.querySelectorAll('.card');
     const residentCards = document.querySelectorAll('.resident-card');
+    
 
     let iframeMode = localStorage.getItem('iframeMode') || 'mixed';
     if (iframeMode == 'mixed') document.body.classList.add('mode-mixed');
@@ -113,6 +114,46 @@ document.addEventListener('DOMContentLoaded', () => {
             iframeView.classList.add('hidden');
             iframe.src = ''; // Pulisce l'iframe
             document.body.style.overflow = ''; // Ripristina lo scroll
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const openBtn = document.getElementById('open-calendar-btn');
+    const closeBtn = document.getElementById('close-calendar-btn');
+    const sidebar = document.getElementById('calendar-sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (openBtn && sidebar && closeBtn && overlay) {
+        openBtn.addEventListener('click', (e) => {
+            // Se lo schermo è più piccolo di 768px (smartphone), apre il link diretto di Outlook
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                window.open('https://outlook.office365.com/owa/calendar/1b311367f78e4c6592e438e82269cf44@edu.elis.org/716b4f1c29ed4ff1be8d42a6c4f1bf3b11803823812295274568/calendar.html', '_blank');
+            } else {
+                // Altrimenti apre la tua sidebar con l'iframe su PC
+                openSidebar();
+            }
+        });
+        closeBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar); // Chiude cliccando sull'oscuramento
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+                closeSidebar();
+            }
         });
     }
 });

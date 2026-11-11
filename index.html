@@ -183,11 +183,21 @@
                     <i class="fa-solid fa-window-maximize"></i>
                     <span id="toggle-iframe-text"> Iframe: Disattivato </span>
                 </button>
-                
+
                 <button id="toggle-resident-btn" class="toggle-btn mode-off">
                     <i class="fa-solid fa-house-user"></i>
                     <span id="toggle-resident-text"> Residente: No </span>
                 </button>
+                
+                <div class="split-btn">
+                    <button id="open-calendar-btn" class="split-main">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Calendario</span>
+                    </button>
+                    <a href="https://outlook.office365.com/owa/calendar/1b311367f78e4c6592e438e82269cf44@edu.elis.org/716b4f1c29ed4ff1be8d42a6c4f1bf3b11803823812295274568/calendar.ics" download="calendario.ics" class="split-download" title="Scarica file ICS">
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
                 
                 <a class="toggle-btn report-btn" href="mailto:francesco.fortunato@edu.elis.org?subject=Segnalazione ELIS Dashboard - [inserisci breve descrizione]">
                     <i class="fa-solid fa-triangle-exclamation"></i>
@@ -195,6 +205,15 @@
                 </a>
             </div>
         </main>
+    </div>
+
+    <div id="calendar-sidebar" class="calendar-sidebar">
+        <button id="close-calendar-btn" class="close-sidebar-btn" title="Chiudi">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="sidebar-content">
+            <iframe src="https://outlook.office365.com/owa/calendar/1b311367f78e4c6592e438e82269cf44@edu.elis.org/716b4f1c29ed4ff1be8d42a6c4f1bf3b11803823812295274568/calendar.html" frameborder="0"></iframe>
+        </div>
     </div>
 
     <footer class="footer">
@@ -214,6 +233,7 @@
         </div>
     </footer>
 
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -16,3 +16,6 @@ Con la funzione Iframe disattivata tutti i link verranno aperti in una pagina nu
 
 ## Modalità Residente
 Con la modalità Residente attivata verranno mostrati altri pulsanti, utili per chi sta in residenza maschile.
+
+## Calendario lezioni
+E' possibile aprire il calendario delle lezioni direttamente sulla nella dashboard; alternativamente si può scaricare un comodo file .ics per inserire il calendario direttamente sul proprio dispositivo.
