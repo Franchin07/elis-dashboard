@@ -19,3 +19,6 @@ Con la modalità Residente attivata verranno mostrati altri pulsanti, utili per 
 
 ## Calendario lezioni
 E' possibile aprire il calendario delle lezioni direttamente sulla nella dashboard; alternativamente si può scaricare un comodo file .ics per inserire il calendario direttamente sul proprio dispositivo.
+
+## Elenco mail
+E' possibile visualizzare un elenco di persone dell'ELIS, del PoliMI e dell'ELIS College con le relative email.

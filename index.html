@@ -143,7 +143,7 @@
                         <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
                     </a>
 
-                    <a target="_blank" href="https://forms.gle/k3XHryMp1FinjPVw5" class="card college-card resident-card hidden">
+                    <a target="_blank" href="https://forms.gle/k3XHryMp1FinjPVw5" class="card college-card resident-item hidden">
                         <div class="card-icon">
                             <i class="fa-solid fa-bicycle"></i>
                         </div>
@@ -154,7 +154,7 @@
                         <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
                     </a>
 
-                    <a target="_blank" href="https://forms.gle/vmh8QDhPA8t82rVS6" class="card college-card resident-card hidden">
+                    <a target="_blank" href="https://forms.gle/vmh8QDhPA8t82rVS6" class="card college-card resident-item hidden">
                         <div class="card-icon">
                             <i class="fa-solid fa-video"></i>
                         </div>
@@ -165,7 +165,7 @@
                         <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
                     </a>
 
-                    <a target="_blank" href="https://t.me/ElisCollegeBot" class="card college-card resident-card no-iframe hidden">
+                    <a target="_blank" href="https://t.me/ElisCollegeBot" class="card college-card resident-item no-iframe hidden">
                         <div class="card-icon">
                             <i class="fa-brands fa-telegram"></i>
                         </div>
@@ -188,7 +188,7 @@
                     <i class="fa-solid fa-house-user"></i>
                     <span id="toggle-resident-text"> Residente: No </span>
                 </button>
-                
+
                 <div class="split-btn">
                     <button id="open-calendar-btn" class="split-main">
                         <i class="fa-solid fa-calendar-days"></i>
@@ -198,6 +198,11 @@
                         <i class="fa-solid fa-download"></i>
                     </a>
                 </div>
+
+                <button id="open-email-btn" class="toggle-btn">
+                    <i class="fa-solid fa-at"></i>
+                    <span>Email utili</span>
+                </button>
                 
                 <a class="toggle-btn report-btn" href="mailto:francesco.fortunato@edu.elis.org?subject=Segnalazione ELIS Dashboard - [inserisci breve descrizione]">
                     <i class="fa-solid fa-triangle-exclamation"></i>
@@ -216,18 +221,149 @@
         </div>
     </div>
 
+    <div id="email-modal-overlay" class="modal-overlay">
+        <div class="modal-container" role="dialog" aria-labelledby="modal-title">
+            <button id="close-email-btn" class="close-modal-btn" title="Chiudi">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-header">
+                <h3 id="modal-title">Email utili</h3>
+            </div>
+            <div class="modal-body">
+                <section class="category-section">
+                    <h2 class="modal-category-title"> <i class="fa-solid fa-building-columns"></i> ELIS </h2>
+                    <div class="email-slot">
+                        <a href="mailto:l.maddaloni@elis.org" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Laura Maddaloni</p> <span class="mail">(l.maddaloni@elis.org)</span>
+                        </a>
+                        <button class="copy-btn" data-email="l.maddaloni@elis.org" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="email-slot">
+                        <a href="mailto:f.deodati@elis.org" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Francesca Deodati</p> <span class="mail">(f.deodati@elis.org)</span>
+                        </a>
+                        <button class="copy-btn" data-email="f.deodati@elis.org" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="email-slot">
+                        <a href="mailto:d.cedrone@elis.org" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Davide Cedrone</p> <span class="mail">(d.cedrone@elis.org)</span>
+                        </a>
+                        <button class="copy-btn" data-email="d.cedrone@elis.org" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="email-slot">
+                        <a href="mailto:a.guerra@elis.org" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Andrea Guerra</p> <span class="mail">(a.guerra@elis.org)</span>
+                        </a>
+                        <button class="copy-btn" data-email="a.guerra@elis.org" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="category-section">
+                    <h2 class="modal-category-title"> <i class="fa-solid fa-book"></i> PoliMI </h2>
+                    <div class="email-slot">
+                        <a href="mailto:andrea.pini.55@gmail.com" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Andrea Pini (Fondamenti di Informatica)</p> <span class="mail">(andrea.pini.55@gmail.com)</span>
+                        </a>
+                        <button class="copy-btn" data-email="andrea.pini.55@gmail.com" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="email-slot">
+                        <a href="mailto:paola.radrizzani@polimi.it" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Paola Radrizzani (Analisi I)</p> <span class="mail">(paola.radrizzani@polimi.it)</span>
+                        </a>
+                        <button class="copy-btn" data-email="paola.radrizzani@polimi.it" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="email-slot">
+                        <a href="mailto:martellonigianluca@gmail.com" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Gianluca Martelloni (Fisica)</p> <span class="mail">(martellonigianluca@gmail.com)</span>
+                        </a>
+                        <button class="copy-btn" data-email="martellonigianluca@gmail.com" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="email-slot">
+                        <a href="mailto:andreafioccaromano@gmail.com" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Andrea Fiocca Romano (Economia)</p> <span class="mail">(andreafioccaromano@gmail.com)</span>
+                        </a>
+                        <button class="copy-btn" data-email="andreafioccaromano@gmail.com" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="email-slot">
+                        <a href="mailto:edoardo.borsatti@polimi.it" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Edoardo Borsatti (Geometria)</p> <span class="mail">(edoardo.borsatti@polimi.it)</span>
+                        </a>
+                        <button class="copy-btn" data-email="edoardo.borsatti@polimi.it" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="email-slot">
+                        <a href="mailto:michele.quercio@uniroma3.it" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Michele Quercio (Elettrotecnica)</p> <span class="mail">(michele.quercio@uniroma3.it)</span>
+                        </a>
+                        <button class="copy-btn" data-email="michele.quercio@uniroma3.it" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="category-section resident-item">
+                    <h2 class="modal-category-title"> <i class="fa-solid fa-house-user"></i> ELIS College </h2>
+                    <div class="email-slot">
+                        <a href="mailto:giuseppe.dimatteo@esterni.elis.org" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Giuseppe Di Matteo</p> <span class="mail">(giuseppe.dimatteo@esterni.elis.org)</span>
+                        </a>
+                        <button class="copy-btn" data-email="giuseppe.dimatteo@esterni.elis.org" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="email-slot">
+                        <a href="mailto:m.silverio@elis.org" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Marco Silverio</p> <span class="mail">(m.silverio@elis.org)</span>
+                        </a>
+                        <button class="copy-btn" data-email="m.silverio@elis.org" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="email-slot">
+                        <a href="mailto:f.petraccone@elis.org" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Francesco Petraccone</p> <span class="mail">(f.petraccone@elis.org)</span>
+                        </a>
+                        <button class="copy-btn" data-email="f.petraccone@elis.org" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-content">
             <p>Realizzato da Francesco Fortunato - 2026</p>
             <div class="footer-links">
+                <a href="https://www.linkedin.com/in/francesco-fortunato-b371683a8/" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fa-brands fa-linkedin"></i> Linkedin
+                </a>
                 <a href="https://instagram.com/frankfortu_" target="_blank" rel="noopener noreferrer" class="footer-link">
                     <i class="fa-brands fa-instagram"></i> Instagram
                 </a>
-                <a href="https://wa.me/393391033868" target="_blank" rel="noopener noreferrer" class="footer-link">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                </a>
                 <a href="mailto:francesco.fortunato@edu.elis.org" class="footer-link">
                     <i class="fa-solid fa-envelope"></i> Email
+                </a>
+                <a href="https://wa.me/393391033868" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
         </div>

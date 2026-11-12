@@ -214,7 +214,7 @@ body {
     flex-direction: column;
 }
 
-.iframe-container.hidden, .resident-card.hidden {
+.iframe-container.hidden, .resident-item.hidden {
     display: none;
 }
 
@@ -307,6 +307,10 @@ body {
     }
     .split-main {
         justify-content: center;
+    }
+    
+    .mail {
+        display: none;
     }
 }
 
@@ -584,4 +588,159 @@ body.mode-mixed .card:not(.no-iframe):hover .external-icon::before {
 
 .split-download:hover {
     background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================================
+   MODALE POPUP
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    background-color: var(--card-bg, #1e293b);
+    color: var(--text-primary, #f8fafc);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius, 16px);
+    width: 100%;
+    max-width: 660px;
+    max-height: 85vh; /* Fondamentale: impedisce al popup di uscire dallo schermo in altezza */
+    overflow-y: auto;  /* Abilita lo scroll verticale se il contenuto è troppo lungo */
+    -webkit-overflow-scrolling: touch; /* Scroll fluido su iOS */
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.active .modal-container {
+    transform: scale(1);
+}
+
+/* Pulsante Chiudi */
+.close-modal-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary, #94a3b8);
+    font-size: 1.25rem;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition, all 0.2s ease);
+}
+
+.close-modal-btn:hover {
+    background-color: var(--card-hover, #334155);
+    color: var(--text-primary, #f8fafc);
+}
+
+/* Contenuto */
+.modal-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.modal-body p {
+    font-size: 0.95rem;
+    color: var(--text-secondary, #94a3b8);
+}
+
+.modal-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-left: 0.8rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition, all 0.2s ease);
+}
+
+.modal-action-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.modal-category-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.4rem;
+    padding-top: 0.3rem;
+    padding-left: 0.35rem;
+}
+
+/* Contenitore flessibile per l'azione e il pulsante di copia */
+.email-slot {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.email-slot .modal-action-btn {
+    flex-grow: 1; /* Il link email occupa tutto lo spazio disponibile */
+}
+
+/* Pulsante per copiare l'email */
+.copy-btn {
+    background-color: var(--card-bg, #1e293b);
+    color: var(--text-secondary, #94a3b8);
+    border: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: var(--transition, all 0.2s ease);
+}
+
+.copy-btn:hover {
+    background-color: var(--card-hover, #334155);
+    color: var(--text-primary, #f8fafc);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Stato quando l'email è stata copiata con successo */
+.copy-btn.copied {
+    background-color: #22c55e; /* Verde di successo */
+    color: #ffffff;
+    border-color: transparent;
 }

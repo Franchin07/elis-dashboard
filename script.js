@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const iframe = document.getElementById('app-iframe');
     const closeBtn = document.getElementById('close-iframe-btn');
     const cards = document.querySelectorAll('.card');
-    const residentCards = document.querySelectorAll('.resident-card');
+    const residentCards = document.querySelectorAll('.resident-item');
     
 
     let iframeMode = localStorage.getItem('iframeMode') || 'mixed';
@@ -156,4 +156,71 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const openEmailBtn = document.getElementById('open-email-btn');
+    const closeEmailBtn = document.getElementById('close-email-btn');
+    const emailOverlay = document.getElementById('email-modal-overlay');
+
+    function openModal() {
+        emailOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        emailOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (openEmailBtn && closeEmailBtn && emailOverlay) {
+        // Apertura al click
+        openEmailBtn.addEventListener('click', openModal);
+
+        // Chiusura con pulsante 'X'
+        closeEmailBtn.addEventListener('click', closeModal);
+
+        // Chiusura cliccando fuori dal contenuto (sull'overlay)
+        emailOverlay.addEventListener('click', (e) => {
+            if (e.target === emailOverlay) {
+                closeModal();
+            }
+        });
+
+        // Chiusura tramite tasto ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && emailOverlay.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const copyBtns = document.querySelectorAll('.copy-btn');
+
+    copyBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const emailToCopy = btn.getAttribute('data-email');
+            
+            if (emailToCopy) {
+                // Copia l'email negli appunti
+                navigator.clipboard.writeText(emailToCopy).then(() => {
+                    const icon = btn.querySelector('i');
+                    
+                    // Cambia l'icona in una spunta di conferma
+                    btn.classList.add('copied');
+                    icon.className = 'fa-solid fa-check';
+                    
+                    // Ripristina l'icona originale dopo 2 secondi
+                    setTimeout(() => {
+                        btn.classList.remove('copied');
+                        icon.className = 'fa-regular fa-copy';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Errore durante la copia: ', err);
+                });
+            }
+        });
+    });
 });
