@@ -224,3 +224,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const openFilesBtn = document.getElementById('open-files-btn');
+    const closeFilesBtn = document.getElementById('close-files-btn');
+    const filesOverlay = document.getElementById('files-modal-overlay');
+
+    function openModal() {
+        filesOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        filesOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (openFilesBtn && closeFilesBtn && filesOverlay) {
+        openFilesBtn.addEventListener('click', openModal);
+        closeFilesBtn.addEventListener('click', closeModal);
+
+        filesOverlay.addEventListener('click', (e) => {
+            if (e.target === filesOverlay) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && filesOverlay.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
+});

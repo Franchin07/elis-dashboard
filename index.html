@@ -203,6 +203,11 @@
                     <i class="fa-solid fa-at"></i>
                     <span>Email utili</span>
                 </button>
+
+                <button id="open-files-btn" class="toggle-btn">
+                    <i class="fa-solid fa-folder"></i>
+                    <span>Materiale</span>
+                </button>
                 
                 <a class="toggle-btn report-btn" href="mailto:francesco.fortunato@edu.elis.org?subject=Segnalazione ELIS Dashboard - [inserisci breve descrizione]">
                     <i class="fa-solid fa-triangle-exclamation"></i>
@@ -344,7 +349,72 @@
                             <i class="fa-regular fa-copy"></i>
                         </button>
                     </div>
+                    <div class="email-slot">
+                        <a href="mailto:residenza@elis.org" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Residenza</p> <span class="mail">(residenza@elis.org)</span>
+                        </a>
+                        <button class="copy-btn" data-email="residenza@elis.org" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="email-slot">
+                        <a href="mailto:m.silverio@elis.org?cc=f.petraccone@elis.org" class="modal-action-btn">
+                            <i class="fa-solid fa-envelope"></i> <p>Mail risultato gite</p> <span class="mail">(m.silverio@elis.org, CC f.petraccone@elis.org)</span>
+                        </a>
+                        <button class="copy-btn" data-email="m.silverio@elis.org" title="Copia email">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
                 </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="files-modal-overlay" class="modal-overlay">
+        <div class="modal-container" role="dialog" aria-labelledby="modal-title">
+            <button id="close-files-btn" class="close-modal-btn" title="Chiudi">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-header">
+                <h3 id="modal-title">Materiale</h3>
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-category-title-material"> <i class="fa-solid fa-building-columns"></i> ELIS </h2>
+                <div class="category-section grid" id="files-modal">
+                    <a target="_blank" href="https://cedelcloud.sharepoint.com/:x:/s/StaffingEDU21-22/IQCHy-AzN_0HRK_zTizSxQ2-AfFFSYNngXwPaDU09MSpKFg?e=GWHnYZ" class="files-card no-iframe">
+                        <div class="card-content">
+                            <h5>Excel Aule</h5>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>
+                </div>
+
+                <h2 class="modal-category-title-material"> <i class="fa-solid fa-book"></i> PoliMI </h2>
+                <div class="category-section grid" id="files-modal">
+                    <a target="_blank" href="https://polimi365-my.sharepoint.com/:b:/g/personal/11221433_polimi_it/IQC88sJ9ufxyTZxONn7pccyvAVFrAfkt31pVK4q-iY_MjEA?e=flEKBH" class="files-card no-iframe">
+                        <div class="card-content">
+                            <h5>Analisi I - Bramanti</h5>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>
+                </div>
+
+                <h2 class="modal-category-title-material resident-item"> <i class="fa-solid fa-house-user"></i> ELIS College </h2>
+                <div class="category-section grid resident-item" id="files-modal">
+                    <!--<a target="_blank" href="https://polimi365-my.sharepoint.com/:b:/g/personal/11221433_polimi_it/IQC88sJ9ufxyTZxONn7pccyvAVFrAfkt31pVK4q-iY_MjEA?e=flEKBH" class="files-card no-iframe">
+                        <div class="card-content">
+                            <h5>Analisi I - Bramanti</h5>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>-->
+                    <a class="files-card add-btn report-btn" href="mailto:francesco.fortunato@edu.elis.org?subject=Materiale ELIS Dashboard - [inserisci nome/i]">
+                        <h4>Suggerisci materiale - ELIS College</h4>
+                    </a>
+                </div>
+                
+                <a class="files-card add-btn report-btn" href="mailto:francesco.fortunato@edu.elis.org?subject=Materiale ELIS Dashboard - [inserisci nome/i]">
+                    <h4>Suggerisci materiale +</h4>
+                </a>
             </div>
         </div>
     </div>

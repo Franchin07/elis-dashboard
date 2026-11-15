@@ -10,6 +10,8 @@ Dashboard per Ingegneria Digitale
 - pasti.eliscollege.org
 - sport.eliscollege.org
 - biblioteca.elis.org
+- forms.gle/[biciclette e spettacoli College]
+- t.me/[bot telegram College]
 
 ## Funzione Iframe
 Con la funzione Iframe disattivata tutti i link verranno aperti in una pagina nuova, con Iframe attivato i link supportati verranno aperti direttamente nella dashboard con un pulsante per tornare indietro.
@@ -22,3 +24,6 @@ E' possibile aprire il calendario delle lezioni direttamente sulla nella dashboa
 
 ## Elenco mail
 E' possibile visualizzare un elenco di persone dell'ELIS, del PoliMI e dell'ELIS College con le relative email.
+
+## Elenco materiale utile
+E' possibile visualizzare un elenco di file utili di natura ELIS, PoliMI ed ELIS College.

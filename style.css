@@ -146,11 +146,18 @@ body {
 .card-content {
     flex-grow: 1;
 }
+a.files-card {
+    justify-content: center;
+}
 
 .card-content h3 {
     font-size: 1.05rem;
     font-weight: 600;
     margin-bottom: 0.2rem;
+}
+.card-content h5 {
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .card-content p {
@@ -178,7 +185,7 @@ body {
 }
 
 .college-card:hover {
-    border-color: rgba(56, 189, 248, 0.4);
+    border-color: rgba(248, 143, 129, 0.4);
 }
 
 .elis-card .card-icon {
@@ -196,7 +203,27 @@ body {
 }
 
 .poli-card:hover {
-    border-color: rgba(248, 143, 129, 0.4);
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+.files-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.files-card:hover {
+    opacity: 1;
+    transform: translate(2px, -2px);
 }
 
 /* ==========================================================================
@@ -397,6 +424,9 @@ body.mode-mixed .card.no-iframe .external-icon {
 body:not(.mode-mixed) .card.no-iframe .external-icon {
     opacity: 0;
 }
+.files-card .external-icon {
+    opacity: 1;
+}
 
 /* 2. Icona di default (link esterno) */
 .external-icon::before {
@@ -431,7 +461,7 @@ body.mode-mixed .card:not(.no-iframe):hover .external-icon::before {
 
 .footer-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 0.4rem 1.5rem;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -623,7 +653,7 @@ body.mode-mixed .card:not(.no-iframe):hover .external-icon::before {
     border-radius: var(--border-radius, 16px);
     width: 100%;
     max-width: 660px;
-    max-height: 85vh; /* Fondamentale: impedisce al popup di uscire dallo schermo in altezza */
+    max-height: 90vh; /* Fondamentale: impedisce al popup di uscire dallo schermo in altezza */
     overflow-y: auto;  /* Abilita lo scroll verticale se il contenuto è troppo lungo */
     -webkit-overflow-scrolling: touch; /* Scroll fluido su iOS */
     padding: 2rem;
@@ -665,10 +695,14 @@ body.mode-mixed .card:not(.no-iframe):hover .external-icon::before {
 .modal-header h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.4rem;
 }
 
-.modal-body p {
+.modal-header {
+    margin-bottom: 1rem;
+}
+
+.modal-body p, .modal-body h4 {
     font-size: 0.95rem;
     color: var(--text-secondary, #94a3b8);
 }
@@ -701,6 +735,19 @@ body.mode-mixed .card:not(.no-iframe):hover .external-icon::before {
     padding-bottom: 0.4rem;
     padding-top: 0.3rem;
     padding-left: 0.35rem;
+}
+.modal-category-title-material {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.4rem;
+    padding-top: 0.3rem;
+    padding-left: 0.35rem;
+    margin-bottom: 0.7rem;
 }
 
 /* Contenitore flessibile per l'azione e il pulsante di copia */
@@ -743,4 +790,12 @@ body.mode-mixed .card:not(.no-iframe):hover .external-icon::before {
     background-color: #22c55e; /* Verde di successo */
     color: #ffffff;
     border-color: transparent;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+}
+
+.add-btn {
+    background-color: var(--card-hover);
 }
