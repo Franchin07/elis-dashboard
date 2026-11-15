@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.card');
     const residentCards = document.querySelectorAll('.resident-item');
     
-
     let iframeMode = localStorage.getItem('iframeMode') || 'mixed';
+    if (window.innerWidth <= 640) iframeMode = localStorage.getItem('iframeMode') || 'off';
     if (iframeMode == 'mixed') document.body.classList.add('mode-mixed');
     let residentMode = localStorage.getItem('residentMode') || 'off';
     if (residentMode == 'off') document.body.classList.add('mode-off');
