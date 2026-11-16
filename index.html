@@ -9,7 +9,7 @@
     <title>ELIS Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="icon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -205,7 +205,7 @@
                 </button>
 
                 <button id="open-files-btn" class="toggle-btn">
-                    <i class="fa-solid fa-folder"></i>
+                    <i class="fa-solid fa-folder-open"></i>
                     <span>Materiale</span>
                 </button>
                 
@@ -371,7 +371,7 @@
     </div>
 
     <div id="files-modal-overlay" class="modal-overlay">
-        <div class="modal-container" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-container files-container" role="dialog" aria-labelledby="modal-title">
             <button id="close-files-btn" class="close-modal-btn" title="Chiudi">
                 <i class="fa-solid fa-xmark"></i>
             </button>
@@ -381,9 +381,10 @@
             <div class="modal-body">
                 <h2 class="modal-category-title-material"> <i class="fa-solid fa-building-columns"></i> ELIS </h2>
                 <div class="category-section grid" id="files-modal">
-                    <a target="_blank" href="https://cedelcloud.sharepoint.com/:x:/s/StaffingEDU21-22/IQCHy-AzN_0HRK_zTizSxQ2-AfFFSYNngXwPaDU09MSpKFg?e=GWHnYZ" class="files-card no-iframe">
+                    <a target="_blank" href="https://cedelcloud.sharepoint.com/:x:/s/StaffingEDU21-22/IQCHy-AzN_0HRK_zTizSxQ2-AfFFSYNngXwPaDU09MSpKFg?e=GWHnYZ" class="files-card no-iframe elis-card-material">
+                        <i class="fa-solid fa-file-excel"></i>
                         <div class="card-content">
-                            <h5>Excel Aule</h5>
+                            <h5>Aule</h5>
                         </div>
                         <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
                     </a>
@@ -391,9 +392,31 @@
 
                 <h2 class="modal-category-title-material"> <i class="fa-solid fa-book"></i> PoliMI </h2>
                 <div class="category-section grid" id="files-modal">
-                    <a target="_blank" href="https://polimi365-my.sharepoint.com/:b:/g/personal/11221433_polimi_it/IQC88sJ9ufxyTZxONn7pccyvAVFrAfkt31pVK4q-iY_MjEA?e=flEKBH" class="files-card no-iframe">
+                    <a target="_blank" href="https://polimi365-my.sharepoint.com/:b:/g/personal/11221433_polimi_it/IQC88sJ9ufxyTZxONn7pccyvAVFrAfkt31pVK4q-iY_MjEA?e=flEKBH" class="files-card no-iframe poli-card-material">
+                        <i class="fa-solid fa-file-pdf"></i>
                         <div class="card-content">
                             <h5>Analisi I - Bramanti</h5>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>
+                    <a target="_blank" href="https://polimi365-my.sharepoint.com/:f:/g/personal/11221433_polimi_it/IgCliftf2FNKT4dhlAVsN7knAQkhDfzMwV4lcGxIpElAJ6w?e=dNM9kl" class="files-card no-iframe poli-card-material">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <div class="card-content">
+                            <h5>Economia - Teoria</h5>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>
+                    <a target="_blank" href="https://polimi365-my.sharepoint.com/:f:/g/personal/11221433_polimi_it/IgCCGwwP2g4eSJrWQpWJVEmcAYensOW6qjuC3igSzDk5mrY?e=NQ7RYH" class="files-card no-iframe poli-card-material">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <div class="card-content">
+                            <h5>Economia - Esercizi</h5>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                    </a>
+                    <a target="_blank" href="https://polimi365-my.sharepoint.com/:f:/g/personal/11221433_polimi_it/IgC5JQ_gIhWRSo71qw_-BGndAYOU62B2x0pLEa4hQkBKBpM?e=bG26uh" class="files-card no-iframe resident-item poli-card-material">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <div class="card-content">
+                            <h5>Economia - Esercizi svolti (da Tod)</h5>
                         </div>
                         <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
                     </a>
@@ -401,7 +424,8 @@
 
                 <h2 class="modal-category-title-material resident-item"> <i class="fa-solid fa-house-user"></i> ELIS College </h2>
                 <div class="category-section grid resident-item" id="files-modal">
-                    <!--<a target="_blank" href="https://polimi365-my.sharepoint.com/:b:/g/personal/11221433_polimi_it/IQC88sJ9ufxyTZxONn7pccyvAVFrAfkt31pVK4q-iY_MjEA?e=flEKBH" class="files-card no-iframe">
+                    <!--<a target="_blank" href="https://polimi365-my.sharepoint.com/:b:/g/personal/11221433_polimi_it/IQC88sJ9ufxyTZxONn7pccyvAVFrAfkt31pVK4q-iY_MjEA?e=flEKBH" class="files-card no-iframe college-card-material">
+                        <i class="fa-solid fa-folder-open"></i>
                         <div class="card-content">
                             <h5>Analisi I - Bramanti</h5>
                         </div>
@@ -426,6 +450,9 @@
                 <a href="https://www.linkedin.com/in/francesco-fortunato-b371683a8/" target="_blank" rel="noopener noreferrer" class="footer-link">
                     <i class="fa-brands fa-linkedin"></i> Linkedin
                 </a>
+                <a href="https://github.com/Franchin07" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
                 <a href="https://instagram.com/frankfortu_" target="_blank" rel="noopener noreferrer" class="footer-link">
                     <i class="fa-brands fa-instagram"></i> Instagram
                 </a>
@@ -434,6 +461,12 @@
                 </a>
                 <a href="https://wa.me/393391033868" target="_blank" rel="noopener noreferrer" class="footer-link">
                     <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+                <a class="footer-link">
+                    <i class="fa-brands fa-linux"></i>
+                    <i class="fa-brands fa-arch-linux"></i>
+                    <i class="fa-brands fa-reddit"></i>
+                    <i class="fa-brands fa-steam"></i>
                 </a>
             </div>
         </div>

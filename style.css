@@ -179,30 +179,30 @@ a.files-card {
 }
 
 /* VARIANTI CARD PER CATEGORIA */
-.college-card .card-icon {
-    background-color: var(--college-bg-light);
-    color: var(--college-color);
+.college-card .card-icon, .college-card-material {
+    background-color: var(--college-bg-light) !important;
+    color: var(--college-color) !important;
 }
 
-.college-card:hover {
+.college-card-material:hover {
     border-color: rgba(248, 143, 129, 0.4);
 }
 
-.elis-card .card-icon {
-    background-color: var(--elis-bg-light);
-    color: var(--elis-color);
+.elis-card .card-icon, .elis-card-material {
+    background-color: var(--elis-bg-light) !important;
+    color: var(--elis-color) !important;
 }
 
-.elis-card:hover {
+.elis-card-material:hover {
     border-color: rgba(129, 140, 248, 0.4);
 }
 
-.poli-card .card-icon {
-    background-color: var(--poli-bg-light);
-    color: var(--poli-color);
+.poli-card .card-icon, .poli-card-material {
+    background-color: var(--poli-bg-light) !important;
+    color: var(--poli-color) !important;
 }
 
-.poli-card:hover {
+.poli-card-material:hover {
     border-color: rgba(56, 189, 248, 0.4);
 }
 
@@ -224,6 +224,10 @@ a.files-card {
 .files-card:hover {
     opacity: 1;
     transform: translate(2px, -2px);
+}
+
+.files-card i {
+    width: 10px;
 }
 
 /* ==========================================================================
@@ -661,6 +665,10 @@ body.mode-mixed .card:not(.no-iframe):hover .external-icon::before {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     transform: scale(0.9);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.files-container {
+    max-width: 90vh;
 }
 
 .modal-overlay.active .modal-container {
